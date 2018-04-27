@@ -32,6 +32,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var buttonsStackView: UIStackView!
     @IBOutlet weak var videoPlaceHolderLabel: UILabel!
     @IBOutlet weak var sliderStackView: UIStackView!
+    @IBOutlet weak var ButtonsStackViewHeightConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -179,9 +180,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        setupRotateConstraint()
         buttonsStackView.layoutIfNeeded()
         sliderStackView.layoutIfNeeded()
-        setupRotateConstraint()
     }
     
     func setupRotateConstraint() {
@@ -197,6 +198,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }
             durationTimeLabel.textColor = UIColor.white
             currentTimeLabel.textColor = UIColor.white
+            ButtonsStackViewHeightConstraint.constant = 44
+            
         } else {
             screeenButton.setImage(#imageLiteral(resourceName: "full_screen_button").withRenderingMode(.alwaysTemplate), for: .normal)
             buttons.forEach {
@@ -204,6 +207,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }
             durationTimeLabel.textColor = UIColor.black
             currentTimeLabel.textColor = UIColor.black
+            ButtonsStackViewHeightConstraint.constant = 84
         }
     }
     
@@ -248,13 +252,5 @@ class ViewController: UIViewController, UITextFieldDelegate {
             sender.setImage(#imageLiteral(resourceName: "full_screen_exit").withRenderingMode(.alwaysTemplate), for: .normal)
         }
     }
-    
-    
-    
-    //TODO
-    //handling of send invalid url again while playing
-    
-    
-    
 }
 

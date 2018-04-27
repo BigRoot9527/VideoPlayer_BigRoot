@@ -178,6 +178,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Video Player" id="Qv6-o7-Dem"/>
                     <connections>
+                        <outlet property="ButtonsStackViewHeightConstraint" destination="42F-Mo-SHV" id="1jt-rH-sTw"/>
                         <outlet property="backwardButton" destination="2Yn-lm-fPz" id="rfX-9x-Rkv"/>
                         <outlet property="buttonsStackView" destination="qIi-FE-m6r" id="8yX-ec-pZZ"/>
                         <outlet property="currentTimeLabel" destination="uKm-aO-tEH" id="KjF-em-KjY"/>
